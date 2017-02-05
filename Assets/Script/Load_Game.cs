@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Load_Game : MonoBehaviour {
 
+	// Se crea una Camara de inicio
+	Camera MainCamera;
+
+	// Se crea un GameObject referenciado al menu de inicio
 	GameObject MStart;
-	Camera CameraStart;
-	public Vector3 CameraGamePosition; 
-	public Quaternion CameraGameRotation;
+
+	private Button Buttonplay;
+
 	private StartGame sgame;
+
 	//private Button BtnPlay;
 	private bool playing=false;
 	// Use this for initialization
@@ -16,15 +22,24 @@ public class Load_Game : MonoBehaviour {
 	void Awake(){
 
 
+		// Se crea el Gameobject Maincamera que almacenara el Prefab de CameraStart
+		MainCamera = ((GameObject)Instantiate(Resources.Load("Prefabs/CameraStart"), Vector3.zero, Quaternion.identity)).GetComponent<Camera>();
+		MainCamera.name = "CameraStart";
 
-		CameraStart = ((GameObject)Instantiate(Resources.Load("Prefabs/CameraStart"), Vector3.zero, Quaternion.identity)).GetComponent<Camera>();
-		CameraStart.name = "CameraStart";
+		MStart = (GameObject)Instantiate(Resources.Load("Prefabs/StartGame"), transform.position, transform.rotation);
+		MStart.name = "StartGame";
+
+		Buttonplay = (Button)GameObject.Find ("StartGame/Canvas/ButtonPlay").GetComponent<Button> ();
+
+		Buttonplay.onClick.AddListener (()=> Play());
+
 		sgame = new StartGame();
-
-		MStart = (GameObject)Instantiate(Resources.Load("Prefabs/MStart"), transform.position, transform.rotation);
-		MStart.name = "MStart";
 	}
 
+	public void Play(){
+		sgame.startGame ();
+
+	}
 
 	
 	// Update is called once per frame
