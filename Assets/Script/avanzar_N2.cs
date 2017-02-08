@@ -6,21 +6,28 @@ using System;
 
 public class avanzar_N2 : MonoBehaviour {
 public Text respuesta;
-
-
+	GameObject NivelP;
+	GameObject Nivel2;
+	GameObject Nivel3;
  
  public void resultado()
     {
      
-    if (respuesta.text.Equals("1001")){
-	   SceneManager.LoadScene("Nivel_3");
-	    print("Hello ");
+		if (respuesta.text.Length == 4 && respuesta.text.Equals("1001")){
+			Nivel3 = (GameObject)Instantiate (Resources.Load ("Prefabs/Nivel3"), transform.position, transform.rotation);
+			Nivel3.name = "Nivel3";
+			Nivel2 = GameObject.Find ("Nivel2");
+			Destroy (Nivel2);
+			print ("Paso al nivel 3 ");
     }
-    if (respuesta.text.Equals("0000") || respuesta.text.Equals("0001") || respuesta.text.Equals("0010") || respuesta.text.Equals("0011") || respuesta.text.Equals("0100") || respuesta.text.Equals("0110") || respuesta.text.Equals("0111") || respuesta.text.Equals("1000") || respuesta.text.Equals("0101") || respuesta.text.Equals("1010") || respuesta.text.Equals("1011") || respuesta.text.Equals("1100") || respuesta.text.Equals("1101") || respuesta.text.Equals("1110") || respuesta.text.Equals("1111"))
-    {
-        SceneManager.LoadScene("R_Nivel2");
+    
+		if (respuesta.text.Length == 4 && !respuesta.text.Equals ("1001"))
+		{
+			NivelP= (GameObject)Instantiate(Resources.Load("Prefabs/Fail"), transform.position, transform.rotation);
+			NivelP.name = "Fail";
+			Debug.Log("Perdiste!!!");
+		}
 
     }
 
   }
-}

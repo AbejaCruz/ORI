@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 222828756053965824}
   - component: {fileID: 114964513862827008}
   - component: {fileID: 114434687639151546}
-  - component: {fileID: 114445049001165516}
+  - component: {fileID: 114718120078119148}
   m_Layer: 0
   m_Name: BongoesButton
   m_TagString: Untagged
@@ -390,9 +390,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114445049001165516}
-        m_MethodName: SiguienteEscena
-        m_Mode: 3
+      - m_Target: {fileID: 114718120078119148}
+        m_MethodName: OnButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -403,17 +403,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114445049001165516
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282785312506018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45cd57e733b6a00499510d844a7b053a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114456190469071202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -564,6 +553,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114718120078119148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282785312506018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592e21e5eeb6c7b46b720baf8d356ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114847354668605314
 MonoBehaviour:
   m_ObjectHideFlags: 1

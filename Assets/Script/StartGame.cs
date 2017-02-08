@@ -7,6 +7,8 @@ public class StartGame : MonoBehaviour {
 	public GameObject MainMenu;
 	public GameObject city;
 	public GameObject player;
+	GameObject StartG;
+
 
 	public Camera MainCamera;
 
@@ -21,8 +23,9 @@ public class StartGame : MonoBehaviour {
 
 	public void startGame(){
 
-		// Se desactiva el Menu de inicio del Juego
-		GameObject.Find ("StartGame").SetActive(false);
+		// Se Destruye el Menu de inicio del Juego
+		StartG= GameObject.Find ("StartGame");
+		Destroy (StartG);
 
 
 		// Se instancia el Menu de Seleccion y se carga en el GameObject
